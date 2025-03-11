@@ -1,0 +1,79 @@
+/* Netflix-like signup page styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('../assets/background.jpg') no-repeat center center/cover;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.background {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.overlay {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+}
+
+.signup-container {
+    position: relative;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 40px;
+    border-radius: 5px;
+    width: 320px;
+    text-align: center;
+    color: white;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    background: #333;
+    border: none;
+    padding: 12px;
+    margin: 10px 0;
+    color: white;
+    border-radius: 5px;
+}
+
+button {
+    background: #e50914;
+    color: white;
+    padding: 12px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+p {
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+a {
+    color: #b3b3b3;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}

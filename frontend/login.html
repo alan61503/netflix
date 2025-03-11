@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Netflix Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+<body>
+    <div class="background">
+        <div class="overlay"></div>
+        <div class="login-container">
+            <h1>Sign In</h1>
+            <form id="login-form">
+                <input type="email" id="email" placeholder="Email or phone number" required>
+                <input type="password" id="password" placeholder="Password" required>
+                <button type="submit">Sign In</button>
+                <div class="extra-options">
+                    <div>
+                        <input type="checkbox" id="remember-me">
+                        <label for="remember-me">Remember me</label>
+                    </div>
+                    <a href="#">Need help?</a>
+                </div>
+            </form>
+            <p>New to Netflix? <a href="#">Sign up now</a></p>
+            <small>This page is protected by Google reCAPTCHA to ensure you're not a bot.</small>
+        </div>
+    </div>
+
+    <script src="../js/login.js"></script>
+</body>
+</html>
