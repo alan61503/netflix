@@ -1,49 +1,23 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const loginForm = document.getElementById("login-form");
-    const signupForm = document.getElementById("signup-form");
+document.addEventListener("DOMContentLoaded", function () {
+    const movies = [
+        { title: "joker", image: "stranger-things.jpg" },
+        { title: "intestellar", image: "witcher.jpg" },
+        { title: "batman", image: "money-heist.jpg" },
+        { title: "inception", image: "inception.jpg" },
+        { title: "avengers", image: "../images/avengers.jpg" }
+    ];
 
-    if (loginForm) {
-        loginForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const email = document.getElementById("login-email").value;
-            const password = document.getElementById("login-password").value;
+    const movieGrid = document.getElementById("movies-list");
 
-            const response = await fetch("http://localhost:5000/login", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password })
-            });
+    movies.forEach(movie => {
+        const movieItem = document.createElement("div");
+        movieItem.classList.add("movie-item");
 
-            const data = await response.json();
-            if (response.ok) {
-                localStorage.setItem("token", data.token);
-                window.location.href = "index.html";
-            } else {
-                alert(data.error);
-            }
-        });
-    }
+        const img = document.createElement("img");
+        img.src = movie.image;
+        img.alt = movie.title;
 
-    if (signupForm) {
-        signupForm.addEventListener("submit", async (e) => {
-            e.preventDefault();
-            const email = document.getElementById("signup-email").value;
-            const password = document.getElementById("signup-password").value;
-            const name = document.getElementById("signup-name").value;
-
-            const response = await fetch("http://localhost:5000/signup", {
-                method: "POST",
-                headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ email, password, name })
-            });
-
-            const data = await response.json();
-            if (response.ok) {
-                alert("Signup successful! You can now log in.");
-                window.location.href = "login.html";
-            } else {
-                alert(data.error);
-            }
-        });
-    }
+        movieItem.appendChild(img);
+        movieGrid.appendChild(movieItem);
+    });
 });

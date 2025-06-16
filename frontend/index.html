@@ -5,30 +5,33 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fake Netflix</title>
     <link rel="stylesheet" href="styles.css">
-    <div id="user-nav">
-        <a href="login.html" id="login-link">Login</a>
-        <button id="logout-btn" style="display: none;">Logout</button>
-    </div>
-    
-
 </head>
 <body>
-    <header>
+    <!-- Navigation Bar -->
+    <header class="navbar">
         <div class="logo">Netflix</div>
-        <nav>
+        <nav class="nav-links">
             <a href="#">Home</a>
             <a href="#">TV Shows</a>
             <a href="#">Movies</a>
             <a href="#">New & Popular</a>
             <a href="#">My List</a>
         </nav>
-        <div class="user-profile">👤</div>
+        <div class="user-profile">
+            <img src="profile-icon.png" alt="Profile" class="profile-icon">
+            <div class="dropdown">
+                <a href="login.html" id="login-link">Login</a>
+                <button id="logout-btn" style="display: none;">Logout</button>
+            </div>
+        </div>
     </header>
-    
+
+    <!-- Banner Section -->
     <section class="banner">
+        <div class="banner-overlay"></div>
         <div class="banner-content">
-            <h1>Featured Movie</h1>
-            <p>Watch now on Fake Netflix</p>
+            <h1>Breaking Bad</h1>
+            <p>Walter White, a high school chemistry teacher turned methamphetamine kingpin...</p>
             <div class="banner-buttons">
                 <button class="play-btn">▶ Play</button>
                 <button class="info-btn">ℹ More Info</button>
@@ -36,10 +39,13 @@
         </div>
     </section>
 
+    <!-- Movies Section -->
     <section class="movies">
         <h2>Popular Movies</h2>
-        <div class="movie-grid" id="movies-list">
-            <!-- Movie posters will be added here dynamically -->
+        <div class="movie-carousel">
+            <div class="movie-grid" id="movies-list">
+                <!-- Movie posters will be added dynamically -->
+            </div>
         </div>
     </section>
 
