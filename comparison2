@@ -1,0 +1,30 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Model complexity levels (e.g., 1=Linear, 9=Very Complex Model)
+complexity = np.arange(1, 10)
+
+# Simulated error values
+train_error = np.clip(np.exp(-0.4 * complexity) + 0.05 * np.random.randn(9), 0, 1)
+val_error = np.clip(0.3 + 0.6 * np.exp(-0.5 * (complexity - 5) ** 2) + 0.05 * np.random.randn(9), 0, 1.5)
+
+# Plot
+plt.figure(figsize=(10, 6))
+plt.plot(complexity, train_error, label='Training Error', marker='o')
+plt.plot(complexity, val_error, label='Validation Error', marker='o')
+
+# Highlight regions
+plt.axvline(x=2, color='gray', linestyle='--')
+plt.axvline(x=8, color='gray', linestyle='--')
+plt.text(1.2, 1.2, 'Underfitting', color='blue')
+plt.text(6.5, 1.2, 'Overfitting', color='red')
+plt.text(4, 0.3, 'Good Fit', color='green')
+
+# Labels
+plt.title('Underfitting vs Overfitting')
+plt.xlabel('Model Complexity')
+plt.ylabel('Error')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()

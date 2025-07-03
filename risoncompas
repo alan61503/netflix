@@ -1,0 +1,23 @@
+import numpy as np
+import matplotlib.pyplot as plt
+
+# Simulated model complexities (e.g., increasing from Linear → Polynomial → Complex Model)
+complexity = np.arange(1, 10)
+
+# Simulated error values
+training_error = np.exp(-0.4 * complexity) + 0.05 * np.random.randn(9)
+validation_error = 0.5 * np.exp(-0.3 * (complexity - 5) ** 2) + 0.1
+
+# Plot
+plt.figure(figsize=(10, 6))
+plt.plot(complexity, training_error, label='Training Error', marker='o')
+plt.plot(complexity, validation_error, label='Validation Error', marker='o')
+plt.axvline(x=5, color='gray', linestyle='--', label='Optimal Complexity')
+
+plt.title('Bias-Variance Tradeoff')
+plt.xlabel('Model Complexity')
+plt.ylabel('Error')
+plt.legend()
+plt.grid(True)
+plt.tight_layout()
+plt.show()
